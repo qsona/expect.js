@@ -637,7 +637,7 @@
       if (isDate(value) && $keys.length === 0) {
         return stylize(value.toUTCString(), 'date');
       }
-      
+
       // Error objects can be shortcutted
       if (value instanceof Error) {
         return stylize("["+value.toString()+"]", 'Error');
@@ -891,9 +891,9 @@
       return actual.getTime() === expected.getTime();
 
       // 7.3. Other pairs that do not both pass typeof value == "object",
-      // equivalence is determined by ==.
+      // equivalence is determined by ===.
     } else if (typeof actual != 'object' && typeof expected != 'object') {
-      return actual == expected;
+      return false;
     // If both are regular expression use the special `regExpEquiv` method
     // to determine equivalence.
     } else if (isRegExp(actual) && isRegExp(expected)) {

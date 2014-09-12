@@ -66,7 +66,7 @@ expect('1').to.not.be(1);
 
 ```js
 expect({ a: 'b' }).to.eql({ a: 'b' });
-expect(1).to.eql('1');
+expect(1).to.not.eql('1');
 ```
 
 **a**/**an**: asserts `typeof` with support for `array` type and `instanceof`
@@ -208,7 +208,7 @@ and shown/processed by the test runner.
 
 ## Differences with should.js
 
-- No need for static `should` methods like `should.strictEqual`. For example, 
+- No need for static `should` methods like `should.strictEqual`. For example,
   `expect(obj).to.be(undefined)` works well.
 - Some API simplifications / changes.
 - API changes related to browser compatibility.
