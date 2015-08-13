@@ -951,8 +951,8 @@
       return expect.eql(a, b);
     }
     try{
-      var ka = keys(a),
-        kb = keys(b),
+      var ka = keys(a).filter(function(key) { return a[key] !== undefined; }),
+        kb = keys(b).filter(function(key) { return b[key] !== undefined; }),
         key, i;
     } catch (e) {//happens when one is a string literal and the other isn't
       return false;
